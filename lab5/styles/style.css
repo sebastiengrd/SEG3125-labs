@@ -144,40 +144,16 @@ body {
     background-color: #fff;
 }
 
-.ui-datepicker-header {
-    background-color: rgb(72 115 62);
-}
-
-.ui-datepicker-title {
-    color: rgb(0, 0, 0);
-}
-
-.ui-widget-content .ui-state-default {
-    border: 0px;
-    text-align: center;
-    background: #fff;
-    font-weight: normal;
-    color: #000;
-}
-
-.ui-widget-content .ui-state-default:hover {
-    border: 0px;
-    text-align: center;
-    background: #000;
-    font-weight: normal;
-    color: #fff;
-}
-
-.ui-widget-content .ui-state-active {
-    border: 0px;
-    background: rgb(72 115 62);
-    color: #fff;
-}
-
 .invalid-icon {
     vertical-align: middle;
 }
 
 .hide {
-    display: none;
+    display: none!important;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    background-color: white!important;
 }

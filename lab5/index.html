@@ -18,7 +18,7 @@
     <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
     <!-- which is built on top of JQuery and offers additional possibilities -->
     <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -183,13 +183,13 @@
             <div style="margin: 2rem;">
                 <h3>Choose Your Health Professional</h3>
                 <div class="radio">
-                    <label><input type="radio" name="optradio" checked>Dr. Julie Ellison</label>
+                    <label><input class="doctor-selection-input" type="radio" name="doctor-selection" checked>Dr. Julie Ellison</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">Dr. Eliot Holfoster</label>
+                    <label><input class="doctor-selection-input" type="radio" name="doctor-selection">Dr. Eliot Holfoster</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">Dr. Edwar Murray</label>
+                    <label><input class="doctor-selection-input" type="radio" name="doctor-selection">Dr. Edwar Murray</label>
                 </div>
             </div>
         </div>
@@ -234,7 +234,8 @@
             <div id="price-container" class="hide">
                 <h2>Price: </h2>
                 <p>Before Tax: <span id="price-before-tax">14.95</span></p>
-                <p>Total: <span id="price-total">16</span></p>
+                <p>Total: <b><span id="price-total">16$</span></b></p>
+                <label for="card-number">Card Number:</label>
                 <input type="text" id="credit-card-input" class="form-control" style="max-width: 11rem;" placeholder="AAAABBBBCCCCDDDD" name="credit-card-number-restriction">
                 <p style="color: red;" id="price-error"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a card number</p>
                 <br>
@@ -244,10 +245,19 @@
 
 
 
+
         </div>
     </div>
 
+    <div id="confirmation-container" class="hide" style="display: flex; justify-content: center; width: 100%; background-color: rgb(72 115 62); color: white; padding: 2rem;">
+        <div style="width: 100%; text-align: center;">
+            <h2><i class="fi-rr-check"></i> Your appointment Has Been Scheduled Successfully</h2>
+            <p>You should recive a confirmation email soon. Please call us for any change or question :)</p>
+        </div>
+    </div>
+    <br>
 
+    </div>
 
     </div>
 

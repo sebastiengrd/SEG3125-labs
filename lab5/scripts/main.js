@@ -2,7 +2,10 @@
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["06/29/2020", "07/07/2020", "07/10/2020"];
+var unavailableDates1 = ["06/29/2021", "07/2/2021", "07/29/2021"];
+var unavailableDates2 = ["07/03/2021", "07/04/2021", "07/05/2021"];
+var unavailableDates3 = ["07/06/2021", "07/07/2021", "07/08/2021"];
+
 const setDateFormat = "mm/dd/yy";
 
 function disableDates(date) {
@@ -10,8 +13,15 @@ function disableDates(date) {
     if (date.getDay() === 0)
         return [false];
     var string = jQuery.datepicker.formatDate(setDateFormat, date);
-    return [unavailableDates.indexOf(string) === -1]
+    if (selectedDoctor == 0) {
+        return [unavailableDates1.indexOf(string) === -1]
+    } else if (selectedDoctor == 1) {
+        return [unavailableDates2.indexOf(string) === -1]
+    } else {
+        return [unavailableDates3.indexOf(string) === -1]
+    }
 }
+
 
 
 // HERE, JQuery "LISTENING" starts
@@ -38,10 +48,10 @@ $(document).ready(function() {
 
     // Also, here is a good tutorial for playing with the datepicker in https://webkul.com/blog/jquery-datepicker/
     // Datepicker is also documented as one of the widgets here: https://api.jqueryui.com/category/widgets/
+
     $("#dateInput").datepicker({
         dateFormat: setDateFormat,
-        // no calendar before June 1rst 2020
-        minDate: new Date('06/01/2020'),
+        minDate: new Date(),
         maxDate: '+4M',
         // used to disable some dates
         beforeShowDay: $.datepicker.noWeekends,
@@ -84,6 +94,7 @@ let phoneValid = false;
 let emailValid = false;
 let dateValid = false;
 let cardValid = false;
+let selectedDoctor = 0;
 
 $(function() {
     $("input[name='restricted-input-3-num']").on('input', function(e) {
@@ -163,6 +174,18 @@ $(function() {
         let payValid = everythingValid && cardValid;
 
         showOrHide("#pay-error", !payValid)
+        showOrHide("#confirmation-container", payValid)
 
     })
+
+    $("input[name='doctor-selection']").on('input', function(e) {
+        buttons = document.getElementsByClassName("doctor-selection-input")
+
+        for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].checked) {
+                selectedDoctor = i;
+            }
+        }
+
+    });
 });

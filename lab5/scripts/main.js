@@ -88,13 +88,26 @@ function showOrHide(name, valid) {
     }
 }
 
+function calculatePrice() {
+    let totalPriceBeforeTax = 0;
+    for (let i = 0; i < 5; i++) {
+        totalPriceBeforeTax += serviceSelections[i] * prices[i]
+    }
+    let totalPrice = totalPriceBeforeTax * 1.15
 
+    $("#price-before-tax").text(totalPriceBeforeTax.toFixed(2) + "$")
+    $("#price-total").text(totalPrice.toFixed(2) + "$")
+}
+
+let choiceValid = false;
 let nameValid = false;
 let phoneValid = false;
 let emailValid = false;
 let dateValid = false;
 let cardValid = false;
 let selectedDoctor = 0;
+let serviceSelections = [false, false, false, false, false]
+let prices = [100, 200, 400, 500, 50]
 
 $(function() {
     $("input[name='restricted-input-3-num']").on('input', function(e) {
@@ -153,7 +166,7 @@ $(function() {
     })
 
     $("#checkout-button").click(function() {
-        let everythingValid = nameValid && phoneValid && emailValid && dateValid
+        let everythingValid = choiceValid && nameValid && phoneValid && emailValid && dateValid
         showOrHide("#overall-error", !everythingValid)
         showOrHide("#price-container", everythingValid)
     })
@@ -167,7 +180,7 @@ $(function() {
     })
 
     $("#pay-button").click(function() {
-        let everythingValid = nameValid && phoneValid && emailValid && dateValid
+        let everythingValid = choiceValid && nameValid && phoneValid && emailValid && dateValid
         showOrHide("#overall-error", !everythingValid)
         showOrHide("#price-container", everythingValid)
 
@@ -187,5 +200,22 @@ $(function() {
             }
         }
 
+    });
+
+    $("input[name='service-selection']").on('input', function(e) {
+        let selections = document.getElementsByClassName("service-selection-input")
+        let valid = false;
+        for (let i = 0; i < selections.length; i++) {
+            serviceSelections[i] = selections[i].checked;
+            if (selections[i].checked) {
+                valid = true;
+            }
+        }
+
+        choiceValid = valid;
+
+        showOrHide("#choice-service-error", !choiceValid)
+
+        calculatePrice()
     });
 });

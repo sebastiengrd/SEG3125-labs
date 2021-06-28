@@ -68,19 +68,21 @@ $(document).ready(function() {
             "ui-tooltip": "highlight"
         }
     });
-
-
 });
+
 
 
 $(function() {
     $("input[name='restricted-input-3-num']").on('input', function(e) {
         $(this).val($(this).val().replace(/[^0-9]/g, '').substring(0, 3));
     });
-});
 
-$(function() {
     $("input[name='restricted-input-4-num']").on('input', function(e) {
         $(this).val($(this).val().replace(/[^0-9]/g, '').substring(0, 4));
+    });
+
+    $("input[name='credit-card-number-restriction']").on('input', function(e) {
+        $(this).val($(this).val().replace(/[^0-9]/g, '').substring(0, 16));
+
     });
 });

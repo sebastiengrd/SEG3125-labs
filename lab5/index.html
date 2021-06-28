@@ -22,6 +22,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 
 
@@ -72,7 +74,7 @@
     </div>
     <div style="padding: 1em; margin-top: 2em;" id="service-section">
         <h1 style="text-align: center;">Our Services</h1>
-
+        <br>
         <div class="container">
             <div class="row" style="justify-content: space-evenly;">
                 <div class="col-sm-4">
@@ -103,16 +105,16 @@
 
     <div style="background-color: rgb(219, 219, 219); padding: 1em; margin-top: 2em;" id="contact-us-section">
         <h1 style="text-align: center; margin-bottom: 2rem;">Contact us</h1>
-        <div style="width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap;">
-            <div>
+        <div style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="margin: 1rem;">
                 <h3>Informations</h3>
                 Phone: 614-679-1642<br>Fax:614-495-1673<br>Email: contact.us@qualityanimalcare.com<br>
             </div>
-            <div>
+            <div style="margin: 1rem;">
                 <h3>Hours</h3>
                 Monday-Friday: 8am - 6pm <br>Saturday-Sunday: 10am - 4pm
             </div>
-            <div>
+            <div style="margin: 1rem;">
                 <h3>Location</h3>
                 <p style>
                     1234 Where-Is-It Street<br>Ottawa, ON<br>A7R 2W7
@@ -147,58 +149,78 @@
 
     <div style="background-color: rgb(219, 219, 219); padding: 1em; margin-top: 2em;" id="schedule-an-appointment-section">
         <h1 style="text-align: center;">Schedule an appointment</h1>
-
-        <h3>Purpose of the appointment</h3>
-        <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="">General Care
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="">Dentist
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="">Emergency
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="">Surgical Care
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="">Information Session
-            </label>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="margin: 2rem;">
+                <h3>Purpose of the appointment</h3>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">General Care
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">Dentist
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">Emergency
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">Surgical Care
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">Information Session
+                    </label>
+                </div>
+            </div>
+            <div style="margin: 2rem;">
+                <h3>Choose Your Health Professional</h3>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" checked>Dr. Julie Ellison</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">Dr. Eliot Holfoster</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">Dr. Edwar Murray</label>
+                </div>
+            </div>
         </div>
         <br>
         <h3>Contact Informations</h3>
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="name" class="form-control" placeholder="Enter Your Name" id="name" required>
+            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter your name</p>
             <br>
             <label for="phone">Phone:</label>
-            <div class="d-flex mt-3">
-                <input type="text" class="form-control" name="restricted-input-3-num">
-                <input type=" text " class="form-control " name="restricted-input-3-num">
-                <input type="text" class="form-control" name="restricted-input-4-num">
+            <div style="display: flex; justify-content: flex-start;">
+                <input type="text" class="form-control" name="restricted-input-3-num" placeholder="XXX" style="max-width: 4rem; text-align: center;">
+                <input type="text" class="form-control" name="restricted-input-3-num" placeholder="XXX" style="max-width: 4rem; text-align: center;">
+                <input type="text" class="form-control" name="restricted-input-4-num" placeholder="XXXX" style="max-width: 5rem; text-align: center;">
             </div>
+            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter your phone number</p>
+
             <br>
             <label for="email">Email address:</label>
             <input type="email" class="form-control" placeholder="Enter email" id="email" required>
+            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a valid email</p>
+
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox"> Add this email to the newsletter
             </label>
 
+
             <br><br>
 
             <label class="control-label" for="date">Prefered Date</label><br>
-            <input type="text" id="dateInput" placeholder="MM/DD/YYY">
-
-            <br><br>
+            <input type="text" class="form-control" style="max-width: 8em;" id="dateInput" placeholder="MM/DD/YYYY">
+            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please select a valid date</p>
 
             <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);">Checkout</button>
 
@@ -209,16 +231,10 @@
                 <h2>Price: </h2>
                 <p>Before Tax: <span id="price-before-tax">14.95</span></p>
                 <p>Total: <span id="price-total">16</span></p>
-                <input type="text" id="credit-card-input" placeholder="XXXX-XXXX-XXXX-XXXX">
-                <br><br>
+                <input type="text" id="credit-card-input" class="form-control" style="max-width: 11rem;" placeholder="AAAABBBBCCCCDDDD" name="credit-card-number-restriction">
+                <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a card number</p>
                 <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);">Submit</button>
             </div>
-
-
-
-
-
-
 
 
 

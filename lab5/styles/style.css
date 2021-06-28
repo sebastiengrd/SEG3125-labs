@@ -173,3 +173,7 @@ body {
     background: #616eff;
     color: #fff;
 }
+
+.invalid-icon {
+    vertical-align: middle;
+}

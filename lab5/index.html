@@ -211,7 +211,7 @@
             <br>
             <label for="email">Email address:</label>
             <input type="email" class="form-control" placeholder="Enter email" id="email" required>
-            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a valid email</p>
+            <p style="color: red;" id="email-error"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a valid email</p>
 
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox"> Add this email to the newsletter
@@ -222,9 +222,9 @@
 
             <label class="control-label" for="date">Prefered Date</label><br>
             <input type="text" class="form-control" style="max-width: 8em;" id="dateInput" placeholder="MM/DD/YYYY">
-            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please select a valid date</p>
+            <p style="color: red;" id="date-error"><i class="fi-rr-cross-small invalid-icon"></i>Please select a valid date</p>
 
-            <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);">Checkout</button>
+            <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);" id="checkout-button">Checkout</button>
 
             <br>
             <br>

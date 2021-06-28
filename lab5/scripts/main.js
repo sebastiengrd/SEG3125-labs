@@ -72,11 +72,16 @@ $(document).ready(function() {
 
 function showOrHide(name, valid) {
     if (valid) {
-        $(name).addClass("hide")
-    } else {
         $(name).removeClass("hide")
+    } else {
+        $(name).addClass("hide")
     }
 }
+
+let nameValid = false;
+let phoneValid = false;
+let emailValid = false;
+let dateValid = false;
 
 $(function() {
     $("input[name='restricted-input-3-num']").on('input', function(e) {
@@ -94,7 +99,8 @@ $(function() {
 
     $("#name").on('input', function() {
         let valid = $(this).val().length > 0
-        showOrHide("#name-error", valid)
+        nameValid = valid;
+        showOrHide("#name-error", !valid)
     });
 
     $(".phone-input").on("input", function() {
@@ -102,13 +108,34 @@ $(function() {
         elements = document.getElementsByClassName("phone-input")
         for (let i = 0; i < elements.length; i++) {
             if (i < 2) {
-                valid = valid & elements[i].value.length == 3
+                valid = valid && elements[i].value.length == 3
             } else {
-                valid = valid & elements[i].value.length == 4
+                valid = valid && elements[i].value.length == 4
             }
         }
-        console.log(valid)
-        showOrHide("#phone-error", valid)
+        phoneValid = valid
+        showOrHide("#phone-error", !valid)
 
     });
+
+    $("#email").on("input", function() {
+        let email = $("#email").val()
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let valid = re.test(String(email).toLowerCase())
+        emailValid = valid
+        showOrHide("#email-error", !valid)
+    })
+
+    $("#dateInput").on("propertychange change keyup paste input", function() {
+        var dateRegex = /^\d{2}([/])\d{2}\1\d{4}$/
+        let valid = $("#dateInput").val().length == 10 && dateRegex.test($("#dateInput").val())
+        dateValid = valid;
+        showOrHide("#date-error", !valid)
+    })
+
+    $("#checkout-button").click(function() {
+        let everythingValid = nameValid && phoneValid && emailValid && dateValid
+    })
+
+
 });

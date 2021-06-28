@@ -78,24 +78,26 @@
         <div class="container">
             <div class="row" style="justify-content: space-evenly;">
                 <div class="col-sm-4">
-                    <h3>General Care</h3>
+                    <h3>General Care
+                        <i class="fi-rr-stethoscope" style="vertical-align: middle; font-size: 0.73em;"></i></i>
+                    </h3>
                     <p>Our professional staff can offer a variety of services including medical treatement for eye, skin and several diseases.</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Dentist</h3>
+                    <h3>Dentist <i class="fi-rr-tooth" style="vertical-align: middle; font-size: 0.73em;"></i></h3>
                     <p>We can answer your questions regarding dental concerns and do preventive care to make sure your dog and cat will always be smiling to you. We can also treat a lot of dental-related diseases. We have all the latest equipment necessary
                         to take care of your animal.</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Emergency</h3>
+                    <h3>Emergency <i class="fi-rr-ambulance" style="vertical-align: middle; font-size: 0.73em;"></i></h3>
                     <p>We always have one veterinary surgeon on call. We can take care of any emergency any time because. The health and safety of your animal is our priority.</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Surgical Care</h3>
+                    <h3>Surgical Care <i class="fi-rr-band-aid" style="vertical-align: middle; font-size: 0.73em;"></i></h3>
                     <p>Our experienced veterinarians surgeons can provide a wide variety of surgical care. </p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Information Session</h3>
+                    <h3>Information Session <i class="fi-rr-info" style="vertical-align: middle; font-size: 0.73em;"></i></h3>
                     <p>You never had an animal and you want one for the first time? You are wondering what having an animal requires? What are the financial costs? Come at our information sessions to learn all the basics of having an animal and to answer
                         all of your questions! </p>
                 </div>
@@ -196,15 +198,15 @@
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="name" class="form-control" placeholder="Enter Your Name" id="name" required>
-            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter your name</p>
+            <p style="color: red;" id="name-error"><i class="fi-rr-cross-small invalid-icon"></i>Please enter your name</p>
             <br>
             <label for="phone">Phone:</label>
             <div style="display: flex; justify-content: flex-start;">
-                <input type="text" class="form-control" name="restricted-input-3-num" placeholder="XXX" style="max-width: 4rem; text-align: center;">
-                <input type="text" class="form-control" name="restricted-input-3-num" placeholder="XXX" style="max-width: 4rem; text-align: center;">
-                <input type="text" class="form-control" name="restricted-input-4-num" placeholder="XXXX" style="max-width: 5rem; text-align: center;">
+                <input type="text" class="form-control phone-input" name="restricted-input-3-num" placeholder="XXX" style="max-width: 4rem; text-align: center;">
+                <input type="text" class="form-control phone-input" name="restricted-input-3-num" placeholder="XXX" style="max-width: 4rem; text-align: center;">
+                <input type="text" class="form-control phone-input" name="restricted-input-4-num" placeholder="XXXX" style="max-width: 5rem; text-align: center;">
             </div>
-            <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter your phone number</p>
+            <p style="color: red;" id="phone-error"><i class="fi-rr-cross-small invalid-icon"></i>Please enter your phone number</p>
 
             <br>
             <label for="email">Email address:</label>

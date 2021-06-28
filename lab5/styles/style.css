@@ -145,7 +145,7 @@ body {
 }
 
 .ui-datepicker-header {
-    background-color: #616eff;
+    background-color: rgb(72 115 62);
 }
 
 .ui-datepicker-title {
@@ -170,10 +170,14 @@ body {
 
 .ui-widget-content .ui-state-active {
     border: 0px;
-    background: #616eff;
+    background: rgb(72 115 62);
     color: #fff;
 }
 
 .invalid-icon {
     vertical-align: middle;
+}
+
+.hide {
+    display: none;
 }

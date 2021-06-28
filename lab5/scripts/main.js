@@ -70,7 +70,13 @@ $(document).ready(function() {
     });
 });
 
-
+function showOrHide(name, valid) {
+    if (valid) {
+        $(name).addClass("hide")
+    } else {
+        $(name).removeClass("hide")
+    }
+}
 
 $(function() {
     $("input[name='restricted-input-3-num']").on('input', function(e) {
@@ -83,6 +89,26 @@ $(function() {
 
     $("input[name='credit-card-number-restriction']").on('input', function(e) {
         $(this).val($(this).val().replace(/[^0-9]/g, '').substring(0, 16));
+
+    });
+
+    $("#name").on('input', function() {
+        let valid = $(this).val().length > 0
+        showOrHide("#name-error", valid)
+    });
+
+    $(".phone-input").on("input", function() {
+        let valid = true;
+        elements = document.getElementsByClassName("phone-input")
+        for (let i = 0; i < elements.length; i++) {
+            if (i < 2) {
+                valid = valid & elements[i].value.length == 3
+            } else {
+                valid = valid & elements[i].value.length == 4
+            }
+        }
+        console.log(valid)
+        showOrHide("#phone-error", valid)
 
     });
 });

@@ -223,19 +223,23 @@
             <label class="control-label" for="date">Prefered Date</label><br>
             <input type="text" class="form-control" style="max-width: 8em;" id="dateInput" placeholder="MM/DD/YYYY">
             <p style="color: red;" id="date-error"><i class="fi-rr-cross-small invalid-icon"></i>Please select a valid date</p>
+            <br>
 
             <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);" id="checkout-button">Checkout</button>
+            <p style="color: red;" id="overall-error" class="hide"><i class="fi-rr-cross-small invalid-icon"></i>Please make sure you completed all the sections correctly</p>
 
             <br>
             <br>
 
-            <div id="price-container">
+            <div id="price-container" class="hide">
                 <h2>Price: </h2>
                 <p>Before Tax: <span id="price-before-tax">14.95</span></p>
                 <p>Total: <span id="price-total">16</span></p>
                 <input type="text" id="credit-card-input" class="form-control" style="max-width: 11rem;" placeholder="AAAABBBBCCCCDDDD" name="credit-card-number-restriction">
-                <p style="color: red;"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a card number</p>
-                <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);">Submit</button>
+                <p style="color: red;" id="price-error"><i class="fi-rr-cross-small invalid-icon"></i>Please enter a card number</p>
+                <br>
+                <button type="submit" class="btn btn-primary" style="background-color: rgb(72 115 62);" id="pay-button">Place Order</button>
+                <p style="color: red;" id="pay-error" class="hide"><i class="fi-rr-cross-small invalid-icon"></i>Please make sure you completed all the sections correctly</p>
             </div>
 
 

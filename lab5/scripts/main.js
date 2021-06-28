@@ -78,10 +78,12 @@ function showOrHide(name, valid) {
     }
 }
 
+
 let nameValid = false;
 let phoneValid = false;
 let emailValid = false;
 let dateValid = false;
+let cardValid = false;
 
 $(function() {
     $("input[name='restricted-input-3-num']").on('input', function(e) {
@@ -94,6 +96,12 @@ $(function() {
 
     $("input[name='credit-card-number-restriction']").on('input', function(e) {
         $(this).val($(this).val().replace(/[^0-9]/g, '').substring(0, 16));
+
+        let regex = /^\d{12}/
+        let txt = $("input[name='credit-card-number-restriction']").val()
+        let valid = regex.test(txt) && txt.length == 16
+        showOrHide("#price-error", !valid)
+        cardValid = valid;
 
     });
 
@@ -135,7 +143,26 @@ $(function() {
 
     $("#checkout-button").click(function() {
         let everythingValid = nameValid && phoneValid && emailValid && dateValid
+        showOrHide("#overall-error", !everythingValid)
+        showOrHide("#price-container", everythingValid)
     })
 
+    $("#email").on("input", function() {
+        let email = $("#email").val()
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let valid = re.test(String(email).toLowerCase())
+        emailValid = valid
+        showOrHide("#email-error", !valid)
+    })
 
+    $("#pay-button").click(function() {
+        let everythingValid = nameValid && phoneValid && emailValid && dateValid
+        showOrHide("#overall-error", !everythingValid)
+        showOrHide("#price-container", everythingValid)
+
+        let payValid = everythingValid && cardValid;
+
+        showOrHide("#pay-error", !payValid)
+
+    })
 });

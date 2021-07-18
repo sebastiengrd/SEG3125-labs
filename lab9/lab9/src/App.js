@@ -4,6 +4,7 @@ import Home from './Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFound from './NotFound';
 import { UserProvider } from './context/LanguageContext';
+import Search from './Search';
 
 
 function App() {
@@ -14,13 +15,22 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <UserProvider>
+      <UserProvider>
+        <div className="App" style= {{
+          minHeight: "100vh",
+          display: "flex",
+          flexFlow: "column",
+        }}>
           <Navbar />
-          <div className="content">
+          <div className="content" style={{
+            flexBasis: "auto",
+            flexGrow: "1",
+            display: "flex",
+            flexFlow: "column",
+          }}>
             <Switch>
               <Route exact path="/search">
-                <Home />
+                <Search />
               </Route>
               <Route exact path="/favourite">
                 <Home />
@@ -36,8 +46,8 @@ function App() {
               </Route>
             </Switch>
           </div>
-        </UserProvider>
-      </div>
+        </div>
+      </UserProvider>
     </Router>
   );
 }

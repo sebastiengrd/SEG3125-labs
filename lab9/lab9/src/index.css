@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Yomogi&display=swap');
+html {
+  min-height: 100%;
+}
 
 body {
   margin: 0;
@@ -8,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: auto;
+  min-height: 100%;
 }
 
 code {
@@ -16,6 +19,9 @@ code {
     monospace;
 }
 
+#root {
+  min-height: 100vh;
+}
 
 /* base styles */
 * {
@@ -24,16 +30,18 @@ code {
   color: #333;
 }
 .navbar {
-  padding: 20px;
   display: flex;
   align-items: center;
-
+  width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
   color: #05af70;
   font-family: "Lobster";
+}
+.navbar * {
+  margin: 10px;
 }
 .navbar .links {
   margin-left: auto;

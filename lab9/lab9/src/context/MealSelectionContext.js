@@ -19,7 +19,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "0_5min",
                 "meal_time": "3 min",
                 id: 0,
-                favourite: false
+                favourite: false,
+                days: [],
 
             },
             {
@@ -29,7 +30,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:1,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -38,7 +40,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:2,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -47,7 +50,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:3,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -56,7 +60,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:4,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -65,7 +70,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:5,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -74,7 +80,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:6,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -83,7 +90,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:7,
-                favourite: false
+                favourite: false,
+                days: [],
             },
             {
                 "name": {"En": "Brocoli2", "Fr": "Brocolie3"},
@@ -92,7 +100,8 @@ export const MealProvider = (props) => {
                 "meal_preparation_time": "15_30min",
                 "meal_time": "16 min",
                 id:8,
-                favourite: false
+                favourite: false,
+                days: [],
             }
         ]
     });

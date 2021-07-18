@@ -22,7 +22,7 @@ export const PlanProvider = (props) => {
                 completed: false,
             },
         ],
-        active: 0,
+        active: 1,
     });
     
     return(

@@ -53,6 +53,7 @@ code {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+  display: inline-block;
 }
 .navbar a:hover {
   color: #f1356d;

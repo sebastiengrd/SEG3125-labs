@@ -3,8 +3,9 @@ import Home from './Home';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFound from './NotFound';
-import { UserProvider } from './context/LanguageContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Search from './Search';
+import { MealProvider } from './context/MealSelectionContext';
 
 
 function App() {
@@ -15,39 +16,41 @@ function App() {
 
   return (
     <Router>
-      <UserProvider>
-        <div className="App" style= {{
-          minHeight: "100vh",
-          display: "flex",
-          flexFlow: "column",
-        }}>
-          <Navbar />
-          <div className="content" style={{
-            flexBasis: "auto",
-            flexGrow: "1",
+      <LanguageProvider>
+        <MealProvider>
+          <div className="App" style= {{
+            minHeight: "100vh",
             display: "flex",
             flexFlow: "column",
           }}>
-            <Switch>
-              <Route exact path="/search">
-                <Search />
-              </Route>
-              <Route exact path="/favourite">
-                <Home />
-              </Route>
-              <Route exact path="/plan">
-                <Home />
-              </Route>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
+            <Navbar />
+            <div className="content" style={{
+              flexBasis: "auto",
+              flexGrow: "1",
+              display: "flex",
+              flexFlow: "column",
+            }}>
+              <Switch>
+                <Route exact path="/search">
+                  <Search />
+                </Route>
+                <Route exact path="/favourite">
+                  <Home />
+                </Route>
+                <Route exact path="/plan">
+                  <Home />
+                </Route>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="*">
+                  <NotFound />
+                </Route>
+              </Switch>
+            </div>
           </div>
-        </div>
-      </UserProvider>
+        </MealProvider>
+      </LanguageProvider>
     </Router>
   );
 }

@@ -11,7 +11,16 @@ const MealCard = (props) => {
     const {language, setLanguage} = useContext(LanguageContext);
     const {meals, setMeals} = useContext(MealSelectionContext);
 
+    const parentHandleClick = props.parentHandleClick;
 
+    const handleClick = (e) => {
+        if(e.target.localName != "button") {
+            if(parentHandleClick != undefined) {
+                parentHandleClick(meal);
+            }
+        }
+    }
+    
     const handleAddFavourite = () => {
         let mealsCopy = cloneDeep(meals);
 
@@ -22,7 +31,7 @@ const MealCard = (props) => {
     }
 
     return ( 
-        <div className="meal-card" style={{
+        <div className="meal-card" onClick={handleClick} style={{
             borderWidth: "1px",
             borderStyle: "solid",
             maxWidth: "20rem",
@@ -34,6 +43,7 @@ const MealCard = (props) => {
             margin: "2rem",
             backgroundColor: "white",
             borderRadius: "1rem",
+            borderColor: "#05af70"
         }}>
             <h3>
             { language==="En" ? meal["name"]["En"]: meal["name"]["Fr"] }
@@ -44,7 +54,7 @@ const MealCard = (props) => {
                 padding: "1rem"
             }} />
             <br /><br />
-            {<button onClick={handleAddFavourite}>{ language==="En" ? (meal.favourite? "Remove Favourite": "Add Favourite"): (meal.favourite? "Retirer favorit": "Ajouter aux favorits")}</button>}
+            {<button className="generic-button" onClick={handleAddFavourite}>{ language==="En" ? (meal.favourite? "Remove Favourite": "Add Favourite"): (meal.favourite? "Retirer favorit": "Ajouter aux favorits")}</button>}
         </div>
      );
 }

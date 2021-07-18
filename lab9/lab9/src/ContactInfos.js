@@ -10,8 +10,7 @@ const ContactInfos = () => {
             top: "30vh",
             width: "100%",
             display: "flex",
-            justifyContent: "center"
-
+            justifyContent: "center",
         }}>
 
             <Form>
@@ -59,7 +58,7 @@ const ContactInfos = () => {
                     
                 </Row>
 
-              
+                <Button className="generic-button">Order Now</Button>
 
                 
 

@@ -118,3 +118,19 @@ code {
   border-radius: 3rem;
   background-color: white;
 }
+
+.generic-button {
+  background-color: #05af70;
+  border-width: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin: 1rem;
+
+}
+
+.generic-button:hover {
+  background-color: #b6f5de;
+  color: black;
+  border-width: 0;
+}

@@ -13,6 +13,7 @@ const PlanMiddleSection = () => {
     return ( 
         <div className="plan-middle-section-container" style={{
             flexBasis: "auto",
+            flexGrow: "1",
             
         }}>
             {plan.active==0 && <WeekPlaning />}

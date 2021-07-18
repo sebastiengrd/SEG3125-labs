@@ -28,7 +28,9 @@ const PlanTopBar = () => {
         }}>
             {plan["pages"].map((page) => (
                 <div>
-                    <button onClick={handleClick} id={page.id}>{page.id+1 + " - " + page["title"]}</button>
+                    <button onClick={handleClick} id={page.id} style={{
+                        borderColor: plan.active == page.id? "#05af70" : "black",
+                    }}>{page.id+1 + " - " + page["title"]}</button>
                 </div>
             ))}
         </div>

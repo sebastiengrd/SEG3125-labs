@@ -31,12 +31,12 @@ const PlanBottomSection = () => {
         }}>
             <div>
 
-                {plan.active > 0 && <button onClick={handlePreviousClick}>Previous</button>}
+                {plan.active > 0 && <button className="generic-button" onClick={handlePreviousClick}>Previous</button>}
             </div>
 
             <div>
 
-                { plan.active < 2 && <button onClick={handleNextClick}>Next</button>}
+                { plan.active < 2 && <button className="generic-button" onClick={handleNextClick}>Next</button>}
             </div>
         </div>
      );

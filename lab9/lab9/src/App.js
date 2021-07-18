@@ -7,6 +7,7 @@ import NotFound from './NotFound';
 import { LanguageProvider } from './context/LanguageContext';
 import Search from './Search';
 import { MealProvider } from './context/MealSelectionContext';
+import Plan from './Plan';
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
                   <Favourite />
                 </Route>
                 <Route exact path="/plan">
-                  <Home />
+                  <Plan />
                 </Route>
                 <Route exact path="/">
                   <Home />

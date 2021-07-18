@@ -6,7 +6,7 @@ const Navbar = () => {
     const {language, setLanguage} = useContext(LanguageContext);
     
     const handleChangeLanguage = () => {
-        setLanguage(language=="En"? "FR" : "En");
+        setLanguage(language==="En"? "FR" : "En");
     }
     return ( 
         <div className="navbar">
@@ -15,10 +15,10 @@ const Navbar = () => {
             </Link>
             <div className="links">
                 <button onClick={handleChangeLanguage}>{language=="En"? "Francais": "English"}</button>
-                <Link to="/">{language=="En"? "Home": "Page Principale"}</Link>
-                <Link to="/search">{language=="En"? "Search Recipes": "Chercher"}</Link>
-                <Link to="/favourite">{language=="En"? "My Favourites": "Favorits"}</Link>
-                <Link to="/plan">{language=="En"? "Plan Meals": "Planifier"}</Link>
+                <Link to="/">{language==="En"? "Home": "Page Principale"}</Link>
+                <Link to="/search">{language==="En"? "Search Recipes": "Chercher"}</Link>
+                <Link to="/favourite">{language==="En"? "My Favourites": "Favorits"}</Link>
+                <Link to="/plan">{language==="En"? "Plan Meals": "Planifier"}</Link>
             </div>
 
         </div>

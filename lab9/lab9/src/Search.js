@@ -48,8 +48,6 @@ const Search = () => {
         searchOpt["meal_preparation_time"].map((time) => {
             if(time == mealTime) {sameMealTime = true}
         })
-        console.log(meal)
-        console.log(sameMealType + " " + sameMealTime)
 
         return (sameMealType && sameMealTime);
     }
@@ -93,12 +91,14 @@ const Search = () => {
                 borderLeftWidth: "1px",
                 borderLeftColor: "black",
                 borderLeftStyle: "solid",
+                display: "flex",
+                justifyContent: "flex-start",
+                flexWrap: "wrap"
             }}>
                 
                 {meals["meals"].map((m) => (
-                    <div className="meal-preview" key = {m.id}>
-                        {shouldShow(m) && <MealCard meal={m} />}
-                    </div>
+                    
+                        shouldShow(m) && <MealCard meal={m} />
                 ))}
 
                 

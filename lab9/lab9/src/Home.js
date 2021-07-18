@@ -14,7 +14,7 @@ const Home = () => {
             
         }}>
             <div className="content">
-                <h1>{language=="En"? "With Groceries Made Easy - It's Easy.": "Avec Épicerie Facile, c'est vraiment facile."}</h1>
+                <h1>{language==="En"? "With Groceries Made Easy - It's Easy.": "Avec Épicerie Facile, c'est vraiment facile."}</h1>
                 <ol>
                     <li>Do this</li>
                     <li>And this</li>

@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
+import Favourite from './Favourite';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFound from './NotFound';
@@ -35,7 +36,7 @@ function App() {
                   <Search />
                 </Route>
                 <Route exact path="/favourite">
-                  <Home />
+                  <Favourite />
                 </Route>
                 <Route exact path="/plan">
                   <Home />

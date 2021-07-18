@@ -60,9 +60,12 @@ const Search = () => {
         }}>
             <div className="options" style={{
                 minWidth: "20vh",
+                borderRightWidth: "1px",
+                borderRightColor: "black",
+                borderRightStyle: "solid",
 
             }}>
-                <form onChange={handleSubmit}>
+                <form onChange={handleSubmit} className="options-form">
                     <h3>Type</h3>
                     <input type="checkbox" id="breakfast" name="meal_type" value="breakfast" defaultChecked />
                     <label htmlFor="breakfast">Breakfast</label><br />
@@ -71,7 +74,7 @@ const Search = () => {
                     <input type="checkbox" id="dinner" name="meal_type" value="dinner" defaultChecked />
                     <label htmlFor="dinner">Dinner</label>
                     <hr />
-                    <h3>Type</h3>
+                    <h3>Time</h3>
                     <input type="checkbox" id="0_5min" name="meal_preparation_time" value="0_5min" defaultChecked />
                     <label htmlFor="0_5min">0-5 min</label><br />
                     <input type="checkbox" id="5_10min" name="meal_preparation_time" value="5_10min" defaultChecked />
@@ -88,18 +91,24 @@ const Search = () => {
             </div>
             <div className="results" style={{
                 width: "100%",
-                borderLeftWidth: "1px",
-                borderLeftColor: "black",
-                borderLeftStyle: "solid",
                 display: "flex",
                 justifyContent: "flex-start",
-                flexWrap: "wrap"
+                flexWrap: "wrap",
+                backgroundColor: "#f5f5f5",
             }}>
+                <div style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "space-evenly",
+                    height: "min-content",
+                }}>
+
+                    {meals["meals"].map((m) => (
+                        
+                            shouldShow(m) && <MealCard meal={m} />
+                    ))}
+                </div>
                 
-                {meals["meals"].map((m) => (
-                    
-                        shouldShow(m) && <MealCard meal={m} />
-                ))}
 
                 
             </div>

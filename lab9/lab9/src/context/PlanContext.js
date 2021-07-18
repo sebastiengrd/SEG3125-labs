@@ -7,22 +7,22 @@ export const PlanProvider = (props) => {
     const [plan, setPlan] = useState({
         "pages": [
             {
-                "title": "Page 1",
+                "title": "Plan Your Week",
                 id: 0,
                 completed: false,
             },
             {
-                "title": "Page 2",
+                "title": "Analysis of your Diet",
                 id: 1,
                 completed: false,
             },
             {
-                "title": "Page 3",
+                "title": "Order",
                 id: 2,
                 completed: false,
             },
         ],
-        active: 1,
+        active: 0,
     });
     
     return(

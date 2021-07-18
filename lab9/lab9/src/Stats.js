@@ -1,5 +1,3 @@
-import {faStar} from "react-icons/fa";
-
 
 const Stats = () => {
     return ( 

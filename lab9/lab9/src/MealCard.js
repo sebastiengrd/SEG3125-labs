@@ -25,13 +25,25 @@ const MealCard = (props) => {
         <div className="meal-card" style={{
             borderWidth: "1px",
             borderStyle: "solid",
-            minWidth: "10vw",
-            maxWidth: "30vw",
+            maxWidth: "20rem",
             flexGrow: "1",
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            padding: "1rem",
+            margin: "2rem",
+            backgroundColor: "white",
+            borderRadius: "1rem",
         }}>
-            <p>
+            <h3>
             { language==="En" ? meal["name"]["En"]: meal["name"]["Fr"] }
-            </p>
+            </h3>
+            <img src={meal["image"]} alt={ language==="En" ? meal["name"]["En"]: meal["name"]["Fr"] } style={{
+                width: "15rem",
+                textAlign: "center",
+                padding: "1rem"
+            }} />
+            <br /><br />
             {<button onClick={handleAddFavourite}>{ language==="En" ? (meal.favourite? "Remove Favourite": "Add Favourite"): (meal.favourite? "Retirer favorit": "Ajouter aux favorits")}</button>}
         </div>
      );

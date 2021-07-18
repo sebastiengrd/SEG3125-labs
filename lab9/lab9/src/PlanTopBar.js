@@ -19,10 +19,17 @@ const PlanTopBar = () => {
     return ( 
         <div className="plan-top-bar-container" style={{
             width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            borderBottomWidth: "1px",
+            borderBottomStyle: "solid",
+            flexWrap: "wrap"
 
         }}>
             {plan["pages"].map((page) => (
-                <button onClick={handleClick} id={page.id}>{page["title"]}</button>
+                <div>
+                    <button onClick={handleClick} id={page.id}>{page.id+1 + " - " + page["title"]}</button>
+                </div>
             ))}
         </div>
      );

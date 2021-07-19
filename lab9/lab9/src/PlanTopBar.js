@@ -1,10 +1,12 @@
 import cloneDeep from 'lodash.clonedeep';
 import { useContext } from 'react';
 import { PlanContext } from './context/PlanContext';
+import {LanguageContext} from "./context/LanguageContext"
 
 const PlanTopBar = () => {
 
     const {plan, setPlan} = useContext(PlanContext)
+    const {language, setLanguage} = useContext(LanguageContext);
 
     const handleClick = (e) => {
 
@@ -30,7 +32,7 @@ const PlanTopBar = () => {
                 <div>
                     <button onClick={handleClick} id={page.id} style={{
                         borderColor: plan.active == page.id? "#05af70" : "black",
-                    }}>{page.id+1 + " - " + page["title"]}</button>
+                    }}>{page.id+1} -  {language==="En"? page["title"][0] : page["title"][1]}</button>
                 </div>
             ))}
         </div>

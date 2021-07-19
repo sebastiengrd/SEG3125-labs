@@ -8,6 +8,8 @@ import Popover from "react-bootstrap/Popover";
 import  "react-bootstrap/Popover/";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import {LanguageContext} from "./context/LanguageContext"
+
 
 const WeekPlaning = () => {
 
@@ -15,6 +17,7 @@ const WeekPlaning = () => {
 
     const [activeDay, setActiveDay] = useState(-1);
 
+    const {language, setLanguage} = useContext(LanguageContext);
 
     const shouldShow = (meal) => {
         return meal.favourite;
@@ -60,14 +63,14 @@ const WeekPlaning = () => {
             flexDirection: "row",
         }}>
             <div>
-                <h2 style={{textAlign: "center"}}>Family Selection <Help /></h2>
+                <h2 style={{textAlign: "center"}}>{language === "En"? "Family Selection" : "Selection de votre famille"} <Help /></h2>
                 {meals["meals"].map((m) => (
                     
                     shouldShow(m) && <MealCard meal={m} parentHandleClick={handleClickOnMealsFavourite} />
                 ))}
             </div>
             <div>
-                <h2 style={{textAlign: "center"}}>Calendar</h2>
+                <h2 style={{textAlign: "center"}}>{language === "En"? "Calendar" : "Calendrier"}</h2>
                 
                 <div className="calendar-container" style={{
                     borderWidth: "1px",
@@ -77,7 +80,7 @@ const WeekPlaning = () => {
                 }}>
 
                     <div className="calendar-info-section">
-                        <h3 style={{textAlign: "center"}}>January 2021</h3>
+                        <h3 style={{textAlign: "center"}}>{language === "En"? "January 2021" : "Janvier 2021"}</h3>
                     </div>
                     <div className="calendar-days-section" style={{
                         display: "flex",

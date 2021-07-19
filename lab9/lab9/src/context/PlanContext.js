@@ -7,17 +7,17 @@ export const PlanProvider = (props) => {
     const [plan, setPlan] = useState({
         "pages": [
             {
-                "title": "Plan Your Week",
+                "title": ["Plan Your Week","Planifiez votre semaine"],
                 id: 0,
                 completed: false,
             },
             {
-                "title": "Analysis of your Diet",
+                "title": ["Analysis of your Diet", "Analyzer vos repas"],
                 id: 1,
                 completed: false,
             },
             {
-                "title": "Order",
+                "title": ["Order", "Commandez"],
                 id: 2,
                 completed: false,
             },

@@ -66,7 +66,7 @@ const Search = () => {
 
             }}>
                 <form onChange={handleSubmit} className="options-form">
-                    <h3>Type</h3>
+                    <h3>{language==="En"? "Type": "Type de repas"}</h3>
                     <input type="checkbox" id="breakfast" name="meal_type" value="breakfast" defaultChecked />
                     <label htmlFor="breakfast">Breakfast</label><br />
                     <input type="checkbox" id="lunch" name="meal_type" value="lunch" defaultChecked />
@@ -74,7 +74,7 @@ const Search = () => {
                     <input type="checkbox" id="dinner" name="meal_type" value="dinner" defaultChecked />
                     <label htmlFor="dinner">Dinner</label>
                     <hr />
-                    <h3>Time</h3>
+                    <h3>{language==="En"? "Time": "Temps"}</h3>
                     <input type="checkbox" id="0_5min" name="meal_preparation_time" value="0_5min" defaultChecked />
                     <label htmlFor="0_5min">0-5 min</label><br />
                     <input type="checkbox" id="5_10min" name="meal_preparation_time" value="5_10min" defaultChecked />

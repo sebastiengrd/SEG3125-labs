@@ -49,7 +49,7 @@ const WeekPlaning = () => {
         <Popover id="popover-basic" style={{
             padding: "1rem"
         }}>
-            At the right, there are all the selections of your family. If you want to add a meal to the calendar, click on a day and it should appear red. Then, click on a meal. The meal should be added to the day.
+            At the left, there are all the favourite meals of your family. If you want to add a meal to the calendar, click on a day and it should appear red. Then, click on a meal. The meal should be added to the day.
         </Popover>
     );
 

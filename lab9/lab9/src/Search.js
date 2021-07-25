@@ -68,9 +68,9 @@ const Search = () => {
                 <form onChange={handleSubmit} className="options-form">
                     <h3>{language==="En"? "Type": "Type de repas"}</h3>
                     <input type="checkbox" id="breakfast" name="meal_type" value="breakfast" defaultChecked />
-                    <label htmlFor="breakfast">Breakfast</label><br />
+                    <label htmlFor="breakfast">{language==="En"? "Breakfast": "Déjeuner"}</label><br />
                     <input type="checkbox" id="lunch" name="meal_type" value="lunch" defaultChecked />
-                    <label htmlFor="lunch">Lunch</label><br />
+                    <label htmlFor="lunch">{language==="En"? "Launch": "Launch"}</label><br />
                     <input type="checkbox" id="dinner" name="meal_type" value="dinner" defaultChecked />
                     <label htmlFor="dinner">Dinner</label>
                     <hr />

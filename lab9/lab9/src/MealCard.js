@@ -54,7 +54,7 @@ const MealCard = (props) => {
                 padding: "1rem"
             }} />
             <br /><br />
-            {<button className="generic-button" onClick={handleAddFavourite}>{ language==="En" ? (meal.favourite? "Remove Favourite": "Add Favourite"): (meal.favourite? "Retirer favorit": "Ajouter aux favorits")}</button>}
+            {<button className="generic-button" onClick={handleAddFavourite}>{ language==="En" ? (meal.favourite? "Remove Favourite": "Add to Favourite"): (meal.favourite? "Retirer favorit": "Ajouter aux favorits")}</button>}
         </div>
      );
 }

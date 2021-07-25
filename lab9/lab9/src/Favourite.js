@@ -1,15 +1,17 @@
 import MealCard from './MealCard';
 import { MealSelectionContext } from './context/MealSelectionContext';
 import { useContext } from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Favourite = () => {
 
     const {meals, setMeals} = useContext(MealSelectionContext);
     
+    
     const shouldShow = (meal) => {
         return meal.favourite;
     }
+
 
     return ( 
         <div className="favourite-container" style={{
@@ -28,6 +30,9 @@ const Favourite = () => {
                         
                         shouldShow(m) && <MealCard meal={m} />
                 ))}
+                {meals["meals"].find((m) => {
+                    return m.favourite
+                }) == undefined && <div>Could not find any meals in favourite. <br /> Please make sure to go to <Link to="/search">Search Recipes </Link> and add meals to your favourites</div>}
             </div>
         </div>
      );
